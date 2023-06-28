@@ -16,10 +16,15 @@ const output = {
 
 const process = {
     login: (req, res) => { // 로그인 요청 처리
-        const user = new User(req.body); // User 모델 인스턴스 생성
-        const response = user.login(); // login 메서드 실행
+        const user = new User(req.body);
+        const response = user.login();
         return res.json(response);
     },
+    register: ((req, res) => {
+        const user = new User(req.body);
+        const response = user.register();
+        return res.json(response);
+    }),
 }
 
 module.exports = {

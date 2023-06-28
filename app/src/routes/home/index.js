@@ -9,6 +9,8 @@ const ctrl = require("./home.ctrl"); // home.ctrl.js 불러오기
 router.get("/", ctrl.output.hello);
 router.get("/login", ctrl.output.login);
 router.get("/register", ctrl.output.register);
+
 router.post("/login", ctrl.process.login); // /login 경로로 POST 방식으로 접속했을 때, ctrl.process.login 함수 실행
+router.post("/register", ctrl.process.register);
 
 module.exports = router;

@@ -12,11 +12,13 @@ console.log(id);
 registerBtn.addEventListener("click", register); // 회원가입 버튼 클릭 시 register 함수 실행
 
 function register() { // 회원가입 요청 처리
+    if (!id.value) return alert("아이디를 입력해주십시오.");
+    if (password.value !== confirmPassword.value) return alert("비밀번호가 일치하지 않습니다.");
+
     const req = {
         id: id.value,
         name: name.value,
         password: password.value,
-        confirmPassword: confirmPassword.value,
     };
 
     fetch("/register", { // /register 경로로 POST 방식으로 요청
