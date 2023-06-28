@@ -7,9 +7,9 @@ class User {
         this.body = body;
     }
 
-    login() { // 로그인 요청 처리
+    async login() { // 로그인 요청 처리
         const client = this.body;
-        const {id, password} = UserStorage.getUserInfo(client.id); // UserStorage 모델의 getUserInfo 메서드 실행
+        const {id, password} = await UserStorage.getUserInfo(client.id); // UserStorage 모델의 getUserInfo 메서드 실행
 
         if (id) {
             if (id === client.id && password === client.password) {

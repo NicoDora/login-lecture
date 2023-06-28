@@ -15,9 +15,9 @@ const output = {
 }
 
 const process = {
-    login: (req, res) => { // 로그인 요청 처리
+    login: async (req, res) => { // 로그인 요청 처리
         const user = new User(req.body);
-        const response = user.login();
+        const response = await user.login();
         return res.json(response);
     },
     register: ((req, res) => {
