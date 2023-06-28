@@ -12,7 +12,7 @@ const output = {
     register: (req, res) => {
         res.render("home/register"); // home/register.ejs 렌더링
     },
-}
+};
 
 const process = {
     login: async (req, res) => { // 로그인 요청 처리
@@ -20,12 +20,12 @@ const process = {
         const response = await user.login();
         return res.json(response);
     },
-    register: ((req, res) => {
+    register: async (req, res) => {
         const user = new User(req.body);
-        const response = user.register();
+        const response = await user.register();
         return res.json(response);
-    }),
-}
+    },
+};
 
 module.exports = {
     output,
