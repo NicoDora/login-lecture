@@ -9,6 +9,9 @@ const output = {
     login: (req, res) => {
         res.render("home/login"); // home/login.ejs 렌더링
     },
+    register: (req, res) => {
+        res.render("home/register"); // home/register.ejs 렌더링
+    },
 }
 
 const process = {

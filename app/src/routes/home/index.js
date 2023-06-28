@@ -7,7 +7,8 @@ const router = express.Router(); // express 모듈의 라우터 기능 불러오
 const ctrl = require("./home.ctrl"); // home.ctrl.js 불러오기
 
 router.get("/", ctrl.output.hello);
-router.get("/login", ctrl.output.login); // /login 경로로 접속했을 때, ctrl.output.login 함수 실행
+router.get("/login", ctrl.output.login);
+router.get("/register", ctrl.output.register);
 router.post("/login", ctrl.process.login); // /login 경로로 POST 방식으로 접속했을 때, ctrl.process.login 함수 실행
 
 module.exports = router;
